@@ -11,9 +11,9 @@ import TileLayer from "ol/layer/Tile"
 import OSM from "ol/source/OSM"
 import { XYZ } from "ol/source"
 // 地图控件的库
-import { defaults as defaultControls } from "ol/control.js"
+import { defaults as defaultControls, Zoom } from "ol/control.js"
 // 地图交互的库
-import { defaults as defaultInteractions } from "ol/interaction.js"
+import { defaults as defaultInteractions, DragPan } from "ol/interaction.js"
 export default {
   name: "MapDesc",
   data() {
@@ -68,6 +68,85 @@ export default {
         zoom: 12, //缩放级别
       }),
     })
+    // map方法
+    // add开头的方法
+    // 添加缩放的控件
+    this.map.addControl(new Zoom())
+    // 添加交互
+    this.map.addInteraction(new DragPan())
+    // 添加图层
+    this.map.addLayer(
+      new TileLayer({
+        title: "OpenStreetMap",
+        source: new OSM(), //加载openstreetmap
+        name: "OpenStreetMap",
+      })
+    )
+    // 拿到所有的图层
+    console.log(this.map.getLayer())
+    // 添加叠加层
+    // this.map.addOverlay()
+    // on是用来绑定事件的
+    this.map.on("click", (event) => {
+      console.log("调度事件并调用所有侦听此类型事件的侦听器")
+      this.map.dispatchEvent("dbclick")
+    })
+    // 单击事件
+    this.map.on("singleclick", (event) => {
+      // 获取到地图上加载的所有的控件
+      let controls = this.map.getControls()
+      console.log(controls)
+      // 获取给定像素的投影坐标
+      let coordinateFromPixel = this.map.getCoordinateFromPixel(event.pixel)
+      console.log(coordinateFromPixel)
+    })
+  },
+  methods: {
+    // on开头的函数
+    onMethodHandler() {
+      this.map.once("singleclick", (event) => {
+        console.log("once")
+      })
+    },
+  },
+  // remove开头的事件
+  removeMethodHandler() {
+    let zoom = new Zoom()
+    this.map.addControl(zoom)
+    let controls = this.map.getControls()
+    for (let i = 0; i < controls.getArray().length; i++) {
+      const control = controls.getArray()[i]
+      this.map.removeControl(control)
+    }
+  },
+  // set开头的方法
+  setMethodHandler() {
+    // 设置属性
+    this.map.setProperties("a", "aa")
+    let htmlDivElement = document.createElement("div")
+    htmlDivElement.id = "newMap"
+    document.body.appendChild(htmlDivElement)
+    // 放置到另外一个元素里面
+    this.map.setTarget(htmlDivElement)
+    // 渲染
+    this.map.render()
+    this.map.getProperties() //获取属性值
+    this.map.getTarget() //获取地图容器，这个就会返回地图容器的id
+  },
+  unMethodHandler() {
+    // 不监听某种类型的事件，与on对应
+    // un(type,listener)
+    // 取消设置属性,与set对应
+    // unset(key,opt_silent)
+  },
+  // 强制重新计算地图视口的大小
+  undateSize() {},
+  // 渲染的方法
+  renderMethodHandler() {
+    // 在下一个动画帧请求地图渲染
+    render()
+    // 以同步方式请求立即渲染
+    renderSync()
   },
 }
 </script>

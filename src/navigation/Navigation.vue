@@ -45,6 +45,10 @@ export default {
               name: "/introduction/map",
               navItem: "map地图",
             },
+            {
+              name: "/introduction/view",
+              navItem: "view视图",
+            },
           ],
         },
       ],
@@ -57,5 +61,12 @@ export default {
   width: 200px;
   min-height: 400px;
   position: relative;
+}
+[class*="el-icon-arrow"] {
+  font-size: 25px;
+  color: white;
+  opacity: 0.6;
+}
+ul >>> .el-menu-popup {
 }
 </style>

@@ -3,6 +3,7 @@ import Vue from "vue/dist/vue.js"
 import HelloWorld from "../components/01openlayers入门/HelloWorld"
 import MapDesc from "../components/01openlayers入门/MapDesc"
 import ViewDesc from "../components/01openlayers入门/ViewDesc"
+import ZoomControl from "../components/02openlayers常用控件/ZoomControl"
 Vue.use(Router)
 
 export default new Router({
@@ -18,6 +19,10 @@ export default new Router({
     {
       path: "/introduction/view",
       component: ViewDesc,
+    },
+    {
+      path: "/control/zoom",
+      component: ZoomControl,
     },
   ],
 })

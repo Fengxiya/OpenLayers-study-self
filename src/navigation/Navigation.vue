@@ -51,6 +51,15 @@ export default {
             },
           ],
         },
+        {
+          title: "常用控件",
+          subNav: [
+            {
+              name: "/control/zoom",
+              navItem: "ZoomControl",
+            },
+          ],
+        },
       ],
     }
   },

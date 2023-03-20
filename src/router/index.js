@@ -5,6 +5,7 @@ import MapDesc from "../components/01openlayers入门/MapDesc"
 import ViewDesc from "../components/01openlayers入门/ViewDesc"
 import ZoomControl from "../components/02openlayers常用控件/ZoomControl"
 import BaseOperation from "../components/02openlayers常用控件/BaseOperation"
+import LayerControl from "../components/02openlayers常用控件/LayerControl"
 Vue.use(Router)
 
 export default new Router({
@@ -29,5 +30,13 @@ export default new Router({
       path: "/control/operation",
       component: BaseOperation,
     },
+    {
+      path: "/control/operation",
+      component: BaseOperation,
+    },
+    {
+      path:'control/layer',
+      component:LayerControl,
+    }
   ],
 })

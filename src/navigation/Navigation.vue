@@ -56,7 +56,15 @@ export default {
           subNav: [
             {
               name: "/control/zoom",
-              navItem: "ZoomControl",
+              navItem: "导航控件",
+            },
+            {
+              name: "/control/operate",
+              navItem: "基础控件",
+            },
+            {
+              name: "/control/layer",
+              navItem: "图层控件",
             },
           ],
         },

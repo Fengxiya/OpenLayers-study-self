@@ -74,6 +74,10 @@ export default {
               name: "/control/overview",
               navItem: "鹰眼控件",
             },
+            {
+              name: "/control/fullscreen",
+              navItem: "全屏控件",
+            },
           ],
         },
       ],

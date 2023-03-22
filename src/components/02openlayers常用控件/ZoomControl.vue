@@ -5,7 +5,7 @@
 // 引入依赖
 import { Map, View } from "ol"
 import OSM from "ol/source/OSM"
-// import TileLayer from "ol/layerTile"
+import TileLayer from "ol/layer/Tile"
 import { defaults as defaultControls } from "ol/control.js"
 import { Zoom, ZoomSlider, ZoomToExtent } from "ol/control"
 export default {

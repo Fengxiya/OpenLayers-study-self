@@ -30,7 +30,7 @@
 import { Map, View } from "ol"
 import { XYZ, OSM } from "ol/source"
 import TileLayer from "ol/layer/Tile"
-import { View } from "ol"
+// import { View } from "ol"
 export default {
   name: "LayerControl",
   data() {

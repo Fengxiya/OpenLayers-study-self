@@ -7,6 +7,7 @@ import ZoomControl from "../components/02openlayers常用控件/ZoomControl"
 import BaseOperation from "../components/02openlayers常用控件/BaseOperation"
 import LayerControl from "../components/02openlayers常用控件/LayerControl"
 import PositionControl from "../components/02openlayers常用控件/PositionControl"
+import OverViewControl from "../components/02openlayers常用控件/OverViewControl"
 Vue.use(Router)
 
 export default new Router({
@@ -42,6 +43,10 @@ export default new Router({
     {
       path: "control/position",
       component: PositionControl,
+    },
+    {
+      path: "control/overview",
+      component: OverViewControl,
     },
   ],
 })

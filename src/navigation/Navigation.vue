@@ -70,6 +70,10 @@ export default {
               name: "/control/position",
               navItem: "位置控件",
             },
+            {
+              name: "/control/overview",
+              navItem: "鹰眼控件",
+            },
           ],
         },
       ],

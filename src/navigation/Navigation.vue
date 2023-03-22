@@ -66,6 +66,10 @@ export default {
               name: "/control/layer",
               navItem: "图层控件",
             },
+            {
+              name: "/control/position",
+              navItem: "位置控件",
+            },
           ],
         },
       ],

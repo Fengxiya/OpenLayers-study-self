@@ -78,6 +78,10 @@ export default {
               name: "/control/fullscreen",
               navItem: "全屏控件",
             },
+            {
+              name: "/control/measure",
+              navItem: "测量控件",
+            },
           ],
         },
       ],
